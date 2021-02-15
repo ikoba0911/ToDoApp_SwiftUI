@@ -33,11 +33,8 @@ extension ToDoEntity {
     }
     
     static func delete(in managedObjectContext: NSManagedObjectContext) {
-        // TodoEntityを取得
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoEntity")
-        // fetchしたDBのデータをNSBatchDeleteRequestで削除用に変更
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        // 削除処理をcontainerで実行
         try! PersistenceController.shared.container.persistentStoreCoordinator.execute(batchDeleteRequest,
                                                           with: managedObjectContext)
     }
