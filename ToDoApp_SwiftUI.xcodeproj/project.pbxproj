@@ -19,6 +19,7 @@
 		CA1F20E225DAB83800B21B56 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F20B325DAB83700B21B56 /* Persistence.swift */; };
 		CA1F20E325DAB83800B21B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1F20B425DAB83800B21B56 /* Assets.xcassets */; };
 		CA1F20E425DAB83800B21B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1F20B425DAB83800B21B56 /* Assets.xcassets */; };
+		CA1F211025DAC31B00B21B56 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F210F25DAC31B00B21B56 /* TodoEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CA1F20D425DAB83800B21B56 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1F20D825DAB83800B21B56 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		CA1F20DA25DAB83800B21B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA1F210F25DAC31B00B21B56 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		CA1F20AE25DAB83700B21B56 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CA1F210E25DAC30400B21B56 /* Extension */,
 				CA1F20B125DAB83700B21B56 /* ToDoApp_SwiftUIApp.swift */,
 				CA1F20B225DAB83700B21B56 /* ContentView.swift */,
 				CA1F20B325DAB83700B21B56 /* Persistence.swift */,
@@ -157,6 +160,14 @@
 				CA1F20DA25DAB83800B21B56 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		CA1F210E25DAC30400B21B56 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CA1F210F25DAC31B00B21B56 /* TodoEntity.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1F211025DAC31B00B21B56 /* TodoEntity.swift in Sources */,
 				CA1F20DB25DAB83800B21B56 /* ToDoApp_SwiftUI.xcdatamodeld in Sources */,
 				CA1F20E125DAB83800B21B56 /* Persistence.swift in Sources */,
 				CA1F20DD25DAB83800B21B56 /* ToDoApp_SwiftUIApp.swift in Sources */,
