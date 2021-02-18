@@ -10,7 +10,7 @@ import CoreData
 
 
 // MARK: - Function
-extension TodoEntity {
+extension ToDoEntity {
     
     static func create(in managedObjectContext: NSManagedObjectContext,
                        category: Category,
@@ -55,7 +55,7 @@ extension TodoEntity {
 }
 
 // MARK: - enum
-extension TodoEntity {
+extension ToDoEntity {
     
     enum Category: Int16 {
         case routine

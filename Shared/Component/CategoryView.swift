@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryView: View {
-    var category: TodoEntity.Category
+    var category: ToDoEntity.Category
     @State var numberOfTasks = 0
     @State var showList = false
     @State var addNewtask = false
@@ -17,7 +17,7 @@ struct CategoryView: View {
     
     fileprivate func updateCount() {
         // 表示された時
-        self.numberOfTasks = TodoEntity.getTaskCount(in: self.viewContext, category: self.category)
+        self.numberOfTasks = ToDoEntity.getTaskCount(in: self.viewContext, category: self.category)
     }
     
     var body: some View {
