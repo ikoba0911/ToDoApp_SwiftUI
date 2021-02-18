@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA1CC70425DE9AD400BA1AD7 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1CC70325DE9AD400BA1AD7 /* UserView.swift */; };
 		CA1F20CE25DAB83800B21B56 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F20CD25DAB83800B21B56 /* Tests_iOS.swift */; };
 		CA1F20D925DAB83800B21B56 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F20D825DAB83800B21B56 /* Tests_macOS.swift */; };
 		CA1F20DB25DAB83800B21B56 /* ToDoApp_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA1F20AF25DAB83700B21B56 /* ToDoApp_SwiftUI.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA1CC70325DE9AD400BA1AD7 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CA1F20B025DAB83700B21B56 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CA1F20B125DAB83700B21B56 /* ToDoApp_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA1F20B225DAB83700B21B56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				CA25AEFC25DC018600A19DE6 /* CheckBox.swift */,
+				CA1CC70325DE9AD400BA1AD7 /* UserView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				CA1F20E125DAB83800B21B56 /* Persistence.swift in Sources */,
 				CA1F20DD25DAB83800B21B56 /* ToDoApp_SwiftUIApp.swift in Sources */,
 				CA1F20DF25DAB83800B21B56 /* ContentView.swift in Sources */,
+				CA1CC70425DE9AD400BA1AD7 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
