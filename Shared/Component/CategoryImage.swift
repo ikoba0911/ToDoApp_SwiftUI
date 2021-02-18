@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CategoryImage: View {
     
-    var category: TodoEntity.Category
+    var category: ToDoEntity.Category
     
-    init(category: TodoEntity.Category?) {
+    init(category: ToDoEntity.Category?) {
         // TODO: できればguard句で抜けた方が見栄えは良い？とりあえず暫定対応
         self.category = category ?? .routine
     }
