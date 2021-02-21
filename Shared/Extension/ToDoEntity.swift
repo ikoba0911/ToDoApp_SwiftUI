@@ -32,6 +32,7 @@ extension ToDoEntity {
         }
     }
     
+    // FIXME: 見直しの必要がありそう
     static func delete(in managedObjectContext: NSManagedObjectContext) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoEntity")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
