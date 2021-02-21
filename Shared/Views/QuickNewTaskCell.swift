@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuickNewTask: View {
+struct QuickNewTaskCell: View {
     
     let category: ToDoEntity.Category
     @State var newTaskText: String = ""
@@ -48,7 +48,7 @@ struct QuickNewTask: View {
 struct QuickNewTask_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     static var previews: some View {
-        QuickNewTask(category: .routine).environment(\.managedObjectContext, self.context)
+        QuickNewTaskCell(category: .routine).environment(\.managedObjectContext, self.context)
     }
 }
 #endif
