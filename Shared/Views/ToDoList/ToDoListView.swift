@@ -59,13 +59,8 @@ struct TodoList_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     
     static var previews: some View {
-        
         ToDoEntity.delete(in: context)
-        // デモデータの作成
-        ToDoEntity.create(in: context, category: .routine, task: "勉強をする")
-        ToDoEntity.create(in: context, category: .healthCare, task: "ランニングをする")
-        ToDoEntity.create(in: context, category: .shopping, task: "牛乳を買う")
-        
+        ToDoEntity.createDemoData(in: context)
         return ToDoListView(category: .routine).environment(\.managedObjectContext, context)
     }
 }
