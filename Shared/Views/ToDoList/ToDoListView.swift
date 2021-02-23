@@ -37,7 +37,6 @@ struct ToDoListView: View {
             VStack {
                 List {
                     ForEach(todoList) { todo in
-                        // 特定のカテゴリのみ表示する形にする
                         if todo.category == self.category.rawValue {
                             TodoDetailCell(todo: todo, hideIcon: false)
                         }
@@ -48,7 +47,14 @@ struct ToDoListView: View {
                 QuickNewTaskCell(category: category)
                     .padding()
             }.navigationBarTitle(category.name)
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(leading: Button(action: {
+                ToDoEntity.deleteSingleCategoryEntity(in: viewContext, category: category)
+            }) {
+                HStack {
+                    Image(systemName: "trash")
+                    Text("削除する")
+                }
+            }, trailing: EditButton())
         }
     }
 }
@@ -59,7 +65,7 @@ struct TodoListView_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     
     static var previews: some View {
-        ToDoEntity.delete(in: context)
+        ToDoEntity.deleteBatch(in: context)
         ToDoEntity.createDemoData(in: context)
         return ToDoListView(category: .routine).environment(\.managedObjectContext, context)
     }
