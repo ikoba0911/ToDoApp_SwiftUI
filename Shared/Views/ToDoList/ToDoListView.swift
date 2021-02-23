@@ -39,7 +39,7 @@ struct ToDoListView: View {
                     ForEach(todoList) { todo in
                         // 特定のカテゴリのみ表示する形にする
                         if todo.category == self.category.rawValue {
-                            TodoDetailRow(todo: todo, hideIcon: false)
+                            TodoDetailCell(todo: todo, hideIcon: false)
                         }
                     }.onDelete(perform: { indexSet in
                         deleteTask(at: indexSet)
@@ -54,7 +54,7 @@ struct ToDoListView: View {
 }
 
 #if DEBUG
-struct TodoList_Previews: PreviewProvider {
+struct TodoListView_Previews: PreviewProvider {
     
     static let context = PersistenceController.shared.container.viewContext
     

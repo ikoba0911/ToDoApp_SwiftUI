@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TodoDetailRow: View {
+struct TodoDetailCell: View {
     
     @ObservedObject var todo: ToDoEntity
     let doneState: Int16 = ToDoEntity.State.done.rawValue
@@ -49,7 +49,7 @@ private func isCompleted(state: Int16) -> Bool {
 }
 
 #if DEBUG
-struct TodoDetailRow_Previews: PreviewProvider {
+struct TodoDetailCell_Previews: PreviewProvider {
     
     static var previews: some View {
         
@@ -75,10 +75,10 @@ struct TodoDetailRow_Previews: PreviewProvider {
         newTask3.category = 2
         
         return VStack(alignment: .leading) {
-            TodoDetailRow(todo: newTask1)
-            TodoDetailRow(todo: newTask1, hideIcon: true)
-            TodoDetailRow(todo: newTask2)
-            TodoDetailRow(todo: newTask3)
+            TodoDetailCell(todo: newTask1)
+            TodoDetailCell(todo: newTask1, hideIcon: true)
+            TodoDetailCell(todo: newTask2)
+            TodoDetailCell(todo: newTask3)
         }
     }
 }

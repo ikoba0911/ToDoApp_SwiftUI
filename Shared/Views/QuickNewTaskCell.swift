@@ -45,7 +45,7 @@ struct QuickNewTaskCell: View {
 }
 
 #if DEBUG
-struct QuickNewTask_Previews: PreviewProvider {
+struct QuickNewTaskCell_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     static var previews: some View {
         QuickNewTaskCell(category: .routine).environment(\.managedObjectContext, self.context)

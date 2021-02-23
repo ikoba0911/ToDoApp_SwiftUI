@@ -28,8 +28,10 @@ struct CategoryImage: View {
     }
 }
 
+#if DEBUG
 struct CategoryImage_Previews: PreviewProvider {
     static var previews: some View {
         CategoryImage(category: .routine)
     }
 }
+#endif
