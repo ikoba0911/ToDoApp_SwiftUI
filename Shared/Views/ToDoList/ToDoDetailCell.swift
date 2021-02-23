@@ -52,33 +52,28 @@ private func isCompleted(state: Int16) -> Bool {
 struct TodoDetailCell_Previews: PreviewProvider {
     
     static var previews: some View {
+        let context = PersistenceController.shared.container.viewContext
         
-        let doneState: Int16 = ToDoEntity.State.done.rawValue
-        let uncompletedState: Int16 = ToDoEntity.State.todo.rawValue
+        let routineEntity = ToDoEntity.createDemoEntity(in: context,
+                                                   category: .routine,
+                                                   task: "勉強する",
+                                                   state: .done)
+        let shoppingentity = ToDoEntity.createDemoEntity(in: context,
+                                                   category: .shopping,
+                                                   task: "牛乳を買う",
+                                                   state: .done)
         
-        let container = PersistenceController.shared.container
-        let context = container.viewContext
-        
-        let newTask1 = ToDoEntity(context: context)
-        newTask1.task = "勉強する"
-        newTask1.state = doneState
-        newTask1.category = 0
-        
-        let newTask2 = ToDoEntity(context: context)
-        newTask2.task = "牛乳を買う"
-        newTask2.state = doneState
-        newTask2.category = 1
-        
-        let newTask3 = ToDoEntity(context: context)
-        newTask3.task = "ランニングをする"
-        newTask3.state = uncompletedState
-        newTask3.category = 2
+        let healthCareentity = ToDoEntity.createDemoEntity(in: context,
+                                                   category: .healthCare,
+                                                   task: "ランニングをする",
+                                                   state: .todo)
+        let entities = [routineEntity, shoppingentity, healthCareentity]
         
         return VStack(alignment: .leading) {
-            TodoDetailCell(todo: newTask1)
-            TodoDetailCell(todo: newTask1, hideIcon: true)
-            TodoDetailCell(todo: newTask2)
-            TodoDetailCell(todo: newTask3)
+            ForEach(entities, id: \.self) { entity in
+                TodoDetailCell(todo: entity)
+            }
+            TodoDetailCell(todo: routineEntity, hideIcon: true)
         }
     }
 }

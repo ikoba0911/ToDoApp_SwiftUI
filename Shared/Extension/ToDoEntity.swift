@@ -66,6 +66,19 @@ extension ToDoEntity {
             fatalError("Unresolved error \(error), \(error.userInfo)")
         }
     }
+    
+    static func createDemoEntity(in context: NSManagedObjectContext,
+                                 category: Category,
+                                 task: String,
+                                 state: State,
+                                 time: Date? = Date()) -> ToDoEntity {
+        let entity = ToDoEntity(context: context)
+        entity.category = category.rawValue
+        entity.task = task
+        entity.state = state.rawValue
+        entity.time = time
+        return entity
+    }
 }
 
 // MARK: - enum
