@@ -16,7 +16,6 @@ struct CategoryView: View {
     @Environment(\.managedObjectContext) var viewContext
     
     fileprivate func updateCount() {
-        // 表示された時
         self.numberOfTasks = ToDoEntity.getTaskCount(in: self.viewContext, category: self.category)
     }
     
@@ -35,7 +34,8 @@ struct CategoryView: View {
                 .sheet(isPresented: $showList, onDismiss: {
                         self.updateCount() }
                 ) {
-                    // TODO: 該当のカテゴリのタスク一覧へ遷移する
+                    ToDoListView(category: self.category)
+                        .environment(\.managedObjectContext, self.viewContext)
                 }
             Text(category.name)
             Text("残\(numberOfTasks)個")

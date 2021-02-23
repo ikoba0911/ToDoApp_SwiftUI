@@ -12,36 +12,65 @@ import CoreData
 // MARK: - Function
 extension ToDoEntity {
     
-    static func create(in managedObjectContext: NSManagedObjectContext,
+    static func create(in context: NSManagedObjectContext,
                        category: Category,
                        task: String,
                        time: Date? = Date()){
-        let todo = self.init(context: managedObjectContext)
+        let entity = self.init(context: context)
         print(task)
-        todo.time = time
-        todo.category = category.rawValue
-        todo.task = task
-        todo.state = State.todo.rawValue
-        todo.id = UUID().uuidString
+        entity.time = time
+        entity.category = category.rawValue
+        entity.task = task
+        entity.state = State.todo.rawValue
+        entity.id = UUID().uuidString
         
         do {
-            try  managedObjectContext.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            try context.save()
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
         }
     }
     
-    static func delete(in managedObjectContext: NSManagedObjectContext) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoEntity")
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        try! PersistenceController.shared.container.persistentStoreCoordinator.execute(batchDeleteRequest,
-                                                          with: managedObjectContext)
+    static func deleteAllEntity(in context: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest<ToDoEntity>(entityName: "ToDoEntity")
+        do {
+            let entityList = try context.fetch(fetchRequest)
+            for entity in entityList {
+                context.delete(entity)
+            }
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+    }
+    
+    static func deleteSingleCategoryEntity(in context: NSManagedObjectContext, category: Category) {
+        let fetchRequest = NSFetchRequest<ToDoEntity>(entityName: "ToDoEntity")
+        do {
+            let entityList = try context.fetch(fetchRequest)
+            for entity in entityList {
+                if entity.category == category.rawValue {
+                    context.delete(entity)
+                }
+            }
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+    }
+    
+    static func deleteBatch(in context: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDoEntity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try PersistenceController.shared.container.persistentStoreCoordinator.execute(deleteRequest, with: context)
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
     }
     
     static func getTaskCount(in managedObjectContext: NSManagedObjectContext,
                       category: Category) -> Int {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoEntity")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDoEntity")
         request.predicate = NSPredicate(format: "category == \(category.rawValue)")
         
         do {
@@ -51,6 +80,30 @@ extension ToDoEntity {
             print("Error: \(error.localizedDescription) ")
             return 0
         }
+    }
+    
+    static func createDemoData(in context: NSManagedObjectContext) {
+        let categories: [Category] = [.routine, .healthCare, .shopping]
+        let tasks: [String] = ["勉強をする", "ランニングをする", "牛乳を買う"]
+        zip(categories, tasks).forEach { create(in: context, category: $0, task: $1) }
+        do {
+            try context.save()
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+    }
+    
+    static func createDemoEntity(in context: NSManagedObjectContext,
+                                 category: Category,
+                                 task: String,
+                                 state: State,
+                                 time: Date? = Date()) -> ToDoEntity {
+        let entity = ToDoEntity(context: context)
+        entity.category = category.rawValue
+        entity.task = task
+        entity.state = state.rawValue
+        entity.time = time
+        return entity
     }
 }
 
