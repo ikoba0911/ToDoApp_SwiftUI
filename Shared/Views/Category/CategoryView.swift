@@ -16,7 +16,6 @@ struct CategoryView: View {
     @Environment(\.managedObjectContext) var viewContext
     
     fileprivate func updateCount() {
-        // 表示された時
         self.numberOfTasks = ToDoEntity.getTaskCount(in: self.viewContext, category: self.category)
     }
     
