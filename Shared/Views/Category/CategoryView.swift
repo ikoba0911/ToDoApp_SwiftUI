@@ -47,7 +47,8 @@ struct CategoryView: View {
             }.sheet(isPresented: $addNewtask, onDismiss: {
                 self.updateCount()
             }) {
-                // TODO: タスクを追加するためのViewへ遷移する
+                NewTaskView(category: self.category.rawValue)
+                    .environment(\.managedObjectContext, self.viewContext)
             }
         }.padding()
         .frame(maxWidth: .infinity, minHeight: 150)
