@@ -38,7 +38,9 @@ struct ToDoListView: View {
                 List {
                     ForEach(todoList) { todo in
                         if todo.category == self.category.rawValue {
-                            TodoDetailCell(todo: todo, hideIcon: false)
+                            NavigationLink(destination: EditTaskView(todo: todo)) {
+                                TodoDetailCell(todo: todo, hideIcon: false)
+                            }
                         }
                     }.onDelete(perform: { indexSet in
                         deleteTask(at: indexSet)
