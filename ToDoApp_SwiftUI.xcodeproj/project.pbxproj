@@ -30,6 +30,8 @@
 		CA4544B425E28F7600665DF3 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4544B325E28F7600665DF3 /* Binding.swift */; };
 		CAAD735125E7D7590063BD12 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD735025E7D7590063BD12 /* NewTaskView.swift */; };
 		CAAD735225E7D7590063BD12 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD735025E7D7590063BD12 /* NewTaskView.swift */; };
+		CAAD736125E7D9710063BD12 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD736025E7D9710063BD12 /* EditTaskView.swift */; };
+		CAAD736225E7D9710063BD12 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD736025E7D9710063BD12 /* EditTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		CA4544AD25E28E9500665DF3 /* ToDoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailCell.swift; sourceTree = "<group>"; };
 		CA4544B325E28F7600665DF3 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CAAD735025E7D7590063BD12 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		CAAD736025E7D9710063BD12 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				CAAD735025E7D7590063BD12 /* NewTaskView.swift */,
+				CAAD736025E7D9710063BD12 /* EditTaskView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -396,6 +400,7 @@
 				CA1CC70425DE9AD400BA1AD7 /* UserView.swift in Sources */,
 				CA4544B425E28F7600665DF3 /* Binding.swift in Sources */,
 				CAAD735125E7D7590063BD12 /* NewTaskView.swift in Sources */,
+				CAAD736125E7D9710063BD12 /* EditTaskView.swift in Sources */,
 				CA4544A725E28D5E00665DF3 /* ToDoListView.swift in Sources */,
 				CA4544AE25E28E9500665DF3 /* ToDoDetailCell.swift in Sources */,
 				CA1CC71225DE9CED00BA1AD7 /* CategoryImage.swift in Sources */,
@@ -411,6 +416,7 @@
 				CA1F20DC25DAB83800B21B56 /* ToDoApp_SwiftUI.xcdatamodeld in Sources */,
 				CAAD735225E7D7590063BD12 /* NewTaskView.swift in Sources */,
 				CA1F20E225DAB83800B21B56 /* Persistence.swift in Sources */,
+				CAAD736225E7D9710063BD12 /* EditTaskView.swift in Sources */,
 				CA1F20DE25DAB83800B21B56 /* ToDoApp_SwiftUIApp.swift in Sources */,
 				CA1F20E025DAB83800B21B56 /* ContentView.swift in Sources */,
 			);
