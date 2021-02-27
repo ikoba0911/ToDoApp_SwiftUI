@@ -54,7 +54,7 @@ struct ToDoListView: View {
             }) {
                 HStack {
                     Image(systemName: "trash")
-                    Text("削除する")
+                    Text("全て削除")
                 }
             }, trailing: EditButton())
         }
