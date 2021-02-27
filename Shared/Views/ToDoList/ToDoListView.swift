@@ -54,9 +54,12 @@ struct ToDoListView: View {
             }) {
                 HStack {
                     Image(systemName: "trash")
+                        .foregroundColor(Color("label"))
                     Text("全て削除")
+                        .foregroundColor(Color("label"))
                 }
-            }, trailing: EditButton())
+            }, trailing: EditButton()
+                .foregroundColor(Color("label")))
         }
     }
 }

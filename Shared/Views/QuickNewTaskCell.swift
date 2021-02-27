@@ -28,11 +28,13 @@ struct QuickNewTaskCell: View {
                 self.addNewTask()
             })
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .foregroundColor(Color("label"))
             
             Button(action: {
                 self.addNewTask()
             }) {
                 Text("追加")
+                    .foregroundColor(Color("label"))
             }
             Button(action: {
                 self.cancelTask()

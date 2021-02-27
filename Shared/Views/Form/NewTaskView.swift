@@ -66,7 +66,7 @@ struct NewTaskView: View {
                     }
                 }
             }.navigationTitle("タスクの新規追加")
-            .foregroundColor(.black)
+            .foregroundColor(Color("label"))
             .navigationBarItems(leading: Button(action: {
                 ToDoEntity.create(in: viewContext,
                                   category: ToDoEntity.Category(rawValue: self.category) ?? .routine,
@@ -76,12 +76,7 @@ struct NewTaskView: View {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("保存")
-                    .foregroundColor(.black)
-                    .frame(width: 100, height: 30)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 2)
-                    )
+                    .foregroundColor(Color("label"))
                 
             })
         }
