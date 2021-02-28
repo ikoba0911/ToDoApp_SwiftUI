@@ -32,7 +32,7 @@ struct EditTaskView: View {
     var body: some View {
         Form {
             Section(header: Text("タスク")) {
-                TextField("タスクを入力", text: Binding(source: $todo.task,defaultValue: ""))
+                TextField("タスクを入力", text: Binding(source: $todo.task, defaultValue: ""))
             }
             
             Section(header: Toggle(isOn: Binding(isNotNil: $todo.time, defaultValue: Date())){Text("時間を指定する")}) {
@@ -65,21 +65,20 @@ struct EditTaskView: View {
                 }
             }
         }.navigationBarTitle("タスクの編集")
-            .navigationBarItems(trailing: Button(action: {
-                self.save()
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("閉じる")
-            })
-            .actionSheet(isPresented: $showingSheet) {
-                ActionSheet(title: Text("タスクの削除"), message: Text("このタスクを削除します。よろしいですか？"), buttons: [
-                    .destructive(Text("削除")) {
-                        self.delete()
-                        self.presentationMode.wrappedValue.dismiss()
-                    },
-                    .cancel(Text("キャンセル"))
-                
-                ])
+        .navigationBarItems(trailing: Button(action: {
+            self.save()
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Text("保存する")
+        })
+        .actionSheet(isPresented: $showingSheet) {
+            ActionSheet(title: Text("タスクの削除"), message: Text("このタスクを削除します。よろしいですか？"), buttons: [
+                .destructive(Text("削除")) {
+                    self.delete()
+                    self.presentationMode.wrappedValue.dismiss()
+                },
+                .cancel(Text("キャンセル"))
+            ])
         }
     }
 }

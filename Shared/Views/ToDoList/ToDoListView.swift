@@ -11,6 +11,7 @@ import CoreData
 struct ToDoListView: View {
     
     @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.presentationMode) var presentationMode
     
     @FetchRequest(entity: ToDoEntity.entity(),
            sortDescriptors: [NSSortDescriptor(keyPath: \ToDoEntity.time,
@@ -50,6 +51,11 @@ struct ToDoListView: View {
                     .padding()
             }.navigationBarTitle(category.name)
             .navigationBarItems(leading: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("閉じる")
+                    .foregroundColor(Color("label"))
+            }, trailing: Button(action: {
                 ToDoEntity.deleteSingleCategoryEntity(in: viewContext, category: category)
             }) {
                 HStack {
@@ -58,8 +64,7 @@ struct ToDoListView: View {
                     Text("全て削除")
                         .foregroundColor(Color("label"))
                 }
-            }, trailing: EditButton()
-                .foregroundColor(Color("label")))
+            })
         }
     }
 }

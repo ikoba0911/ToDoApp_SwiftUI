@@ -43,7 +43,11 @@ struct CategoryView: View {
             Button(action: {
                 self.addNewtask = true
             }) {
-                Image(systemName: "plus")
+                HStack {
+                    Image(systemName: "plus")
+                    Text("追加する")
+                }.padding()
+                .border(Color.white, width: 3)
             }.sheet(isPresented: $addNewtask, onDismiss: {
                 self.updateCount()
             }) {
