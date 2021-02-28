@@ -14,12 +14,16 @@ struct QuickNewTaskCell: View {
     @Environment(\.managedObjectContext) var viewContext
     
     fileprivate func addNewTask() {
+        guard newTaskText != "" else {
+            return
+        }
         ToDoEntity.create(in: self.viewContext, category: self.category, task: self.newTaskText)
         self.newTaskText = ""
     }
     
     fileprivate func cancelTask() {
         self.newTaskText = ""
+        UIApplication.shared.closeKeyboard()
     }
     
     var body: some View {
