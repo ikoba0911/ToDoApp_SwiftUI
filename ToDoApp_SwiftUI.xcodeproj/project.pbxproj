@@ -35,6 +35,7 @@
 		CAAD735225E7D7590063BD12 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD735025E7D7590063BD12 /* NewTaskView.swift */; };
 		CAAD736125E7D9710063BD12 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD736025E7D9710063BD12 /* EditTaskView.swift */; };
 		CAAD736225E7D9710063BD12 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD736025E7D9710063BD12 /* EditTaskView.swift */; };
+		CACAC58D25EBE17800F4EEBE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAC58C25EBE17800F4EEBE /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		CA4544B325E28F7600665DF3 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CAAD735025E7D7590063BD12 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		CAAD736025E7D9710063BD12 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		CACAC58C25EBE17800F4EEBE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				CA1F210F25DAC31B00B21B56 /* ToDoEntity.swift */,
 				CA4544B325E28F7600665DF3 /* Binding.swift */,
 				CA3E2B0E25E90B280040083F /* Date.swift */,
+				CACAC58C25EBE17800F4EEBE /* UIApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				CA1F20DD25DAB83800B21B56 /* ToDoApp_SwiftUIApp.swift in Sources */,
 				CA1F20DF25DAB83800B21B56 /* ContentView.swift in Sources */,
 				CA3E2B0F25E90B280040083F /* Date.swift in Sources */,
+				CACAC58D25EBE17800F4EEBE /* UIApplication.swift in Sources */,
 				CA1CC70425DE9AD400BA1AD7 /* UserView.swift in Sources */,
 				CA4544B425E28F7600665DF3 /* Binding.swift in Sources */,
 				CA3E2B0525E90ACE0040083F /* RoundedCorners.swift in Sources */,

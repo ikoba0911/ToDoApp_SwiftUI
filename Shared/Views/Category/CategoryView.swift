@@ -38,12 +38,16 @@ struct CategoryView: View {
                         .environment(\.managedObjectContext, self.viewContext)
                 }
             Text(category.name)
-            Text("残\(numberOfTasks)個")
+            Text("残\(numberOfTasks)タスク")
             
             Button(action: {
                 self.addNewtask = true
             }) {
-                Image(systemName: "plus")
+                HStack {
+                    Image(systemName: "plus")
+                    Text("追加する")
+                }.padding()
+                .border(Color.white, width: 3)
             }.sheet(isPresented: $addNewtask, onDismiss: {
                 self.updateCount()
             }) {
@@ -52,10 +56,10 @@ struct CategoryView: View {
             }
         }.padding()
         .frame(maxWidth: .infinity, minHeight: 150)
-        .cornerRadius(20)
         .foregroundColor(.white)
         .background(linearGradient)
-        .onTapGesture { // タップされた時
+        .cornerRadius(40)
+        .onTapGesture {
             self.showList = true
         }
         .onAppear {

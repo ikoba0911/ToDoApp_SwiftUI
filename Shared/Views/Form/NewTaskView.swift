@@ -11,6 +11,8 @@ struct NewTaskView: View {
     
     @State var task: String = ""
     @State var time: Date? = Date()
+    @State var showingSheet = false
+    @State var showingAlert = false
     @State var category: Int16 = ToDoEntity.Category.routine.rawValue
     var categories: [ToDoEntity.Category] = [.routine, .shopping, .healthCare]
     
@@ -55,35 +57,45 @@ struct NewTaskView: View {
                     }
                 }
                 
-                Section(header: Text("この画面を閉じる")) {
+                Section(header: Text("タスクを追加")) {
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        if task == "" {
+                            self.showingAlert = true
+                            return
+                        }
+                        self.showingSheet = true
                     }) {
                         HStack(alignment: .center) {
-                            Image(systemName: "minus.circle.fill")
-                            Text("Cancel")
-                        }.foregroundColor(.red)
+                            Image(systemName: "pencil.circle.fill")
+                            Text("Create")
+                        }
+                    }.alert(isPresented: $showingAlert) {
+                        Alert(title: Text("タスクが入力されていません"),
+                              message: Text("タスクの内容を入力してください"),
+                              dismissButton: .default(Text("OK")))
                     }
                 }
             }.navigationTitle("タスクの新規追加")
-            .foregroundColor(.black)
+            .foregroundColor(Color("label"))
             .navigationBarItems(leading: Button(action: {
-                ToDoEntity.create(in: viewContext,
-                                  category: ToDoEntity.Category(rawValue: self.category) ?? .routine,
-                                  task: self.task,
-                                  time: self.time)
-                self.save()
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("保存")
-                    .foregroundColor(.black)
-                    .frame(width: 100, height: 30)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 2)
-                    )
-                
+                Text("閉じる")
+                    .foregroundColor(Color("label"))
             })
+            .actionSheet(isPresented: $showingSheet) {
+                ActionSheet(title: Text("タスクの追加"), message: Text("このタスクを追加します。よろしいですか？"), buttons: [
+                    .destructive(Text("追加")) {
+                        ToDoEntity.create(in: viewContext,
+                                          category: ToDoEntity.Category(rawValue: self.category) ?? .routine,
+                                          task: self.task,
+                                          time: self.time)
+                        self.save()
+                        self.presentationMode.wrappedValue.dismiss()
+                    },
+                    .cancel(Text("キャンセル"))
+                ])
+            }
         }
     }
 }
