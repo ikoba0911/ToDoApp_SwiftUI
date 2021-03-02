@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  ToDoApp_SwiftUI
+
+  Created by IkkiKobayashi on 2021/03/02.
+  
+*/
+
+"Yes"     = "Yes";
+"No"      = "No";
+"OK"      = "OK";
+"Cancel"  = "Cancel";
+"Confirm" = "Confirm";
+"Search"  = "Search";
+"Else"    = "Other";
+"Edit"    = "Edit";
+"Done"    = "Done";
+"Friend"  = "Friends";
+"Save"    = "Save";
+"Title"   = "Title";
+"Decide"  = "Enter";
+"Close"   = "Close";
+"Add"     = "Add";
+
+"Task"    = "Task";
+"AddTask" = "Add Task";
+"InputTask" = "Input Task";
+"ScheduledTime" = "ScheduledTime";
+"Category" = "Category";
+"EnterTheTask" = "EnterTheTask";
+
+// MARK: - ViewTitle
+"AddTaskView" = "Add New Task";
+
+// MARK: - Alert
+"NoTaskAlertTitle" = "No task has been entered.";
+"NoTaskAlertMessage" = "Please enter the contents of the task.";
+
+// MARK: - ActionSheet
+"AddTaskActionSheetTitle" = "Adding a Task.";
+"AddTaskActionSheetMessage" = "I would like to add this task. Are you sure?";

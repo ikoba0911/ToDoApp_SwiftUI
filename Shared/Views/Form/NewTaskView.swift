@@ -32,21 +32,22 @@ struct NewTaskView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("タスク")) {
-                    TextField("タスクを入力してください", text: $task)
+                Section(header: Text("Task".localized)) {
+                    TextField("InputTask".localized, text: $task)
                 }
                 
                 Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())) {
-                    Text("予定時間")
+                    Text("ScheduledTime".localized)
                 }) {
                     if isDateExist(date: time) {
-                        DatePicker(selection: Binding(source: $time, defaultValue: Date()), label: { Text("日時") })
+                        DatePicker(selection: Binding(source: $time, defaultValue: Date()),
+                                   label: { Text("") } )
                     } else {
                         Text("not time setting")
                     }
                 }
                 
-                Section(header: Text("カテゴリ")) {
+                Section(header: Text("Category".localized)) {
                     Picker(selection: $category, label: Text("")) {
                         ForEach(categories, id: \.self) { category in
                             HStack {
@@ -57,7 +58,7 @@ struct NewTaskView: View {
                     }
                 }
                 
-                Section(header: Text("タスクを追加")) {
+                Section(header: Text("AddTask".localized)) {
                     Button(action: {
                         if task == "" {
                             self.showingAlert = true
@@ -70,22 +71,22 @@ struct NewTaskView: View {
                             Text("Create")
                         }
                     }.alert(isPresented: $showingAlert) {
-                        Alert(title: Text("タスクが入力されていません"),
-                              message: Text("タスクの内容を入力してください"),
-                              dismissButton: .default(Text("OK")))
+                        Alert(title: Text("NoTaskAlertTitle".localized),
+                              message: Text("NoTaskAlertMessage".localized),
+                              dismissButton: .default(Text("OK".localized)))
                     }
                 }
-            }.navigationTitle("タスクの新規追加")
+            }.navigationTitle("AddTaskView".localized)
             .foregroundColor(Color("label"))
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("閉じる")
+                Text("Close".localized)
                     .foregroundColor(Color("label"))
             })
             .actionSheet(isPresented: $showingSheet) {
-                ActionSheet(title: Text("タスクの追加"), message: Text("このタスクを追加します。よろしいですか？"), buttons: [
-                    .destructive(Text("追加")) {
+                ActionSheet(title: Text("AddTaskActionSheetTitle".localized), message: Text("AddTaskActionSheetMessage".localized), buttons: [
+                    .destructive(Text("Add".localized)) {
                         ToDoEntity.create(in: viewContext,
                                           category: ToDoEntity.Category(rawValue: self.category) ?? .routine,
                                           task: self.task,
@@ -93,7 +94,7 @@ struct NewTaskView: View {
                         self.save()
                         self.presentationMode.wrappedValue.dismiss()
                     },
-                    .cancel(Text("キャンセル"))
+                    .cancel(Text("Cancel".localized))
                 ])
             }
         }
