@@ -31,19 +31,19 @@ struct EditTaskView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("タスク")) {
-                TextField("タスクを入力", text: Binding(source: $todo.task, defaultValue: ""))
+            Section(header: Text("Task".localized)) {
+                TextField("InputTask".localized, text: Binding(source: $todo.task, defaultValue: ""))
             }
             
-            Section(header: Toggle(isOn: Binding(isNotNil: $todo.time, defaultValue: Date())){Text("時間を指定する")}) {
+            Section(header: Toggle(isOn: Binding(isNotNil: $todo.time, defaultValue: Date())){Text("ScheduledTime".localized)}) {
                 if todo.time != nil {
-                    DatePicker(selection: Binding(source: $todo.time, defaultValue: Date()), label: { Text("日時") })
+                    DatePicker(selection: Binding(source: $todo.time, defaultValue: Date()), label: { Text("") })
                 } else {
-                    Text("時間未設定").foregroundColor(.secondary)
+                    Text("TimeNotSet".localized).foregroundColor(.secondary)
                 }
             }
             
-            Section(header: Text("カテゴリ")) {
+            Section(header: Text("Category".localized)) {
                 Picker(selection: $todo.category, label: Text("")) {
                     ForEach(categories, id: \.self) { category in
                         HStack {
@@ -54,7 +54,7 @@ struct EditTaskView: View {
                 }
             }
             
-            Section(header: Text("タスクを削除する")) {
+            Section(header: Text("DeleteTask".localized)) {
                 Button(action: {
                     self.showingSheet = true
                 }) {
@@ -64,25 +64,27 @@ struct EditTaskView: View {
                     }.foregroundColor(.red)
                 }
             }
-        }.navigationBarTitle("タスクの編集")
+        }.navigationBarTitle("EditTaskViewTitle".localized)
+        .foregroundColor(Color("label"))
         .navigationBarItems(trailing: Button(action: {
             self.save()
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Text("保存する")
+            Text("Save".localized)
         })
         .actionSheet(isPresented: $showingSheet) {
-            ActionSheet(title: Text("タスクの削除"), message: Text("このタスクを削除します。よろしいですか？"), buttons: [
-                .destructive(Text("削除")) {
+            ActionSheet(title: Text("DeleteTaskActionSheetTitle".localized), message: Text("DeleteTaskActionSheetMessage".localized), buttons: [
+                .destructive(Text("Delete".localized)) {
                     self.delete()
                     self.presentationMode.wrappedValue.dismiss()
                 },
-                .cancel(Text("キャンセル"))
+                .cancel(Text("Cancel".localized))
             ])
         }
     }
 }
 
+#if DEBUG
 struct EditTaskView_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     static var previews: some View {
@@ -93,3 +95,4 @@ struct EditTaskView_Previews: PreviewProvider {
         }
     }
 }
+#endif

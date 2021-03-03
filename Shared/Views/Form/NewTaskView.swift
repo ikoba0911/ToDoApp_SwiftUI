@@ -43,7 +43,7 @@ struct NewTaskView: View {
                         DatePicker(selection: Binding(source: $time, defaultValue: Date()),
                                    label: { Text("") } )
                     } else {
-                        Text("not time setting")
+                        Text("TimeNotSet".localized)
                     }
                 }
                 
@@ -68,7 +68,7 @@ struct NewTaskView: View {
                     }) {
                         HStack(alignment: .center) {
                             Image(systemName: "pencil.circle.fill")
-                            Text("Create")
+                            Text("Create".localized)
                         }
                     }.alert(isPresented: $showingAlert) {
                         Alert(title: Text("NoTaskAlertTitle".localized),
@@ -76,7 +76,7 @@ struct NewTaskView: View {
                               dismissButton: .default(Text("OK".localized)))
                     }
                 }
-            }.navigationTitle("AddTaskView".localized)
+            }.navigationTitle("AddTaskViewTitle".localized)
             .foregroundColor(Color("label"))
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -105,9 +105,11 @@ private func isDateExist(date: Date?) -> Bool {
     return date != nil
 }
 
+#if DEBUG
 struct NewTaskView_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     static var previews: some View {
         NewTaskView().environment(\.managedObjectContext, context)
     }
 }
+#endif

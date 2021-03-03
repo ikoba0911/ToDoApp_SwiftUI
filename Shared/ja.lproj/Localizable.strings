@@ -19,15 +19,36 @@
 "Decide"  = "決定";
 "Close"   = "閉じる";
 "Add"     = "追加";
+"Delete"  = "削除";
+"Create"  = "作成";
+"Hello"   = "こんにちは";
 
+// MARK: - Category
+"Routine" = "習慣";
+"Shopping" = "買い物リスト";
+"HealthCare" = "健康維持";
+
+// MARK: - Form
 "Task" = "タスク";
 "AddTask" = "タスクを追加";
+"NewTask" = "新しいタスク";
 "InputTask" = "タスクを入力してください";
 "ScheduledTime" = "予定時間";
 "Category" = "カテゴリ";
+"TimeNotSet" = "時間未設定";
+"DeleteTask" = "タスクを削除する";
+
+// MARK: - User
+"UserName" = "%@さん";
+
+// MARK: - ToDoList
+"AllTaskDelete" = "全て削除";
+"TaskRemainigCount" = "残%dタスク";
 
 // MARK: - ViewTitle
-"AddTaskView" = "タスクの新規追加";
+"AddTaskViewTitle" = "タスクの新規追加";
+"EditTaskViewTitle" = "タスクの編集";
+"TodayToDoListViewTitle" = "今日のタスク";
 
 // MARK: - Alert
 "NoTaskAlertTitle" = "タスクが入力されていません";
@@ -36,3 +57,5 @@
 // MARK: - ActionSheet
 "AddTaskActionSheetTitle" = "タスクの追加";
 "AddTaskActionSheetMessage" = "このタスクを追加します。よろしいですか？";
+"DeleteTaskActionSheetTitle" = "タスクの削除";
+"DeleteTaskActionSheetMessage" =  "このタスクを削除します。よろしいですか？";
