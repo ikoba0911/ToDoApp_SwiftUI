@@ -21,21 +21,42 @@
 "Decide"  = "Enter";
 "Close"   = "Close";
 "Add"     = "Add";
+"Delete"  = "Delete";
+"Create"  = "Create";
+"Hello"   = "Hello";
 
+// MARK: - Category
+"Routine" = "Routine";
+"Shopping" = "Shopping";
+"HealthCare" = "HealthCare";
+
+// MARK: - Form
 "Task"    = "Task";
 "AddTask" = "Add Task";
 "InputTask" = "Input Task";
-"ScheduledTime" = "ScheduledTime";
+"ScheduledTime" = "Scheduled Time";
 "Category" = "Category";
-"EnterTheTask" = "EnterTheTask";
+"TimeNotSet" = "Time not set";
+"DeleteTask" = "Delete Task";
+
+// MARK: - User
+"UserName" = "%@";
+
+// MARK: - ToDoList
+"AllTaskDelete" = "AllDelete";
+"TaskRemainigCount" = "%d task remaining";
 
 // MARK: - ViewTitle
-"AddTaskView" = "Add New Task";
+"AddTaskViewTitle" = "Add New Task";
+"EditTaskViewTitle" = "Edit Task";
+"TodayToDoListViewTitle" = "Today Tasks";
 
 // MARK: - Alert
-"NoTaskAlertTitle" = "No task has been entered.";
+"NoTaskAlertTitle" = "No task has been entered";
 "NoTaskAlertMessage" = "Please enter the contents of the task.";
 
 // MARK: - ActionSheet
-"AddTaskActionSheetTitle" = "Adding a Task.";
-"AddTaskActionSheetMessage" = "I would like to add this task. Are you sure?";
+"AddTaskActionSheetTitle" = "Adding a Task";
+"AddTaskActionSheetMessage" = "Can I add a task?";
+"DeleteTaskActionSheetTitle" = "Deleting a task";
+"DeleteTaskActionSheetMessage" =  "Can I delete a task?";

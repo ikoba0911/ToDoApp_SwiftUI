@@ -53,7 +53,7 @@ struct ToDoListView: View {
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("閉じる")
+                Text("Close".localized)
                     .foregroundColor(Color("label"))
             }, trailing: Button(action: {
                 ToDoEntity.deleteSingleCategoryEntity(in: viewContext, category: category)
@@ -61,7 +61,7 @@ struct ToDoListView: View {
                 HStack {
                     Image(systemName: "trash")
                         .foregroundColor(Color("label"))
-                    Text("全て削除")
+                    Text("AllTaskDelete".localized)
                         .foregroundColor(Color("label"))
                 }
             })
