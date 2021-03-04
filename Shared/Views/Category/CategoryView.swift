@@ -38,14 +38,14 @@ struct CategoryView: View {
                         .environment(\.managedObjectContext, self.viewContext)
                 }
             Text(category.name)
-            Text("残\(numberOfTasks)タスク")
+            Text(String(format: "TaskRemainigCount".localized, numberOfTasks))
             
             Button(action: {
                 self.addNewtask = true
             }) {
                 HStack {
                     Image(systemName: "plus")
-                    Text("追加する")
+                    Text("AddTask".localized)
                 }.padding()
                 .border(Color.white, width: 3)
             }.sheet(isPresented: $addNewtask, onDismiss: {
@@ -68,6 +68,7 @@ struct CategoryView: View {
     }
 }
 
+#if DEBUG
 struct CategoryView_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     
@@ -79,3 +80,4 @@ struct CategoryView_Previews: PreviewProvider {
         }.environment(\.managedObjectContext, context)
     }
 }
+#endif
