@@ -118,11 +118,11 @@ extension ToDoEntity {
         var name: String {
             switch self {
             case .routine:
-                return "習慣"
+                return "Routine".localized
             case .shopping:
-                return "買い物リスト"
+                return "Shopping".localized
             case .healthCare:
-                return "健康維持"
+                return "HealthCare".localized
             }
         }
         

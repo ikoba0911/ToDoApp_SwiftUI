@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  ToDoApp_SwiftUI
+
+  Created by IkkiKobayashi on 2021/03/02.
+  
+*/
+
+"Yes"     = "Yes";
+"No"      = "No";
+"OK"      = "OK";
+"Cancel"  = "Cancel";
+"Confirm" = "Confirm";
+"Search"  = "Search";
+"Else"    = "Other";
+"Edit"    = "Edit";
+"Done"    = "Done";
+"Friend"  = "Friends";
+"Save"    = "Save";
+"Title"   = "Title";
+"Decide"  = "Enter";
+"Close"   = "Close";
+"Add"     = "Add";
+"Delete"  = "Delete";
+"Create"  = "Create";
+"Hello"   = "Hello";
+
+// MARK: - Category
+"Routine" = "Routine";
+"Shopping" = "Shopping";
+"HealthCare" = "HealthCare";
+
+// MARK: - Form
+"Task"    = "Task";
+"AddTask" = "Add Task";
+"InputTask" = "Input Task";
+"ScheduledTime" = "Scheduled Time";
+"Category" = "Category";
+"TimeNotSet" = "Time not set";
+"DeleteTask" = "Delete Task";
+
+// MARK: - User
+"UserName" = "%@";
+
+// MARK: - ToDoList
+"AllTaskDelete" = "AllDelete";
+"TaskRemainigCount" = "%d task remaining";
+
+// MARK: - ViewTitle
+"AddTaskViewTitle" = "Add New Task";
+"EditTaskViewTitle" = "Edit Task";
+"TodayToDoListViewTitle" = "Today Tasks";
+
+// MARK: - Alert
+"NoTaskAlertTitle" = "No task has been entered";
+"NoTaskAlertMessage" = "Please enter the contents of the task.";
+
+// MARK: - ActionSheet
+"AddTaskActionSheetTitle" = "Adding a Task";
+"AddTaskActionSheetMessage" = "Can I add a task?";
+"DeleteTaskActionSheetTitle" = "Deleting a task";
+"DeleteTaskActionSheetMessage" =  "Can I delete a task?";

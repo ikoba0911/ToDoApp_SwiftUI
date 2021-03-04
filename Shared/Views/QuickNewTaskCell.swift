@@ -28,7 +28,7 @@ struct QuickNewTaskCell: View {
     
     var body: some View {
         HStack {
-            TextField("新しいタスク", text: $newTaskText, onCommit:  {
+            TextField("InputTask".localized, text: $newTaskText, onCommit:  {
                 self.addNewTask()
             })
             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -37,13 +37,13 @@ struct QuickNewTaskCell: View {
             Button(action: {
                 self.addNewTask()
             }) {
-                Text("追加")
+                Text("Add".localized)
                     .foregroundColor(Color("label"))
             }
             Button(action: {
                 self.cancelTask()
             }) {
-                Text("キャンセル")
+                Text("Cancel".localized)
                     .foregroundColor(.red)
             }
         }

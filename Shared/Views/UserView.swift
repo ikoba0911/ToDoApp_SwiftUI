@@ -15,10 +15,11 @@ struct UserView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("こんにちは")
+                Text("Hello".localized)
                     .foregroundColor(Color.white)
                     .font(.footnote)
-                Text("\(userName)")
+                Text(String(format: "UserName".localized,
+                            userName))
                     .foregroundColor(Color.white)
                     .font(.title)
             }
@@ -38,7 +39,7 @@ struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             UserView(image: Image("swift"),
-                     userName: "User Name")
+                     userName: "SwiftToDo")
             Circle()
         }
     }

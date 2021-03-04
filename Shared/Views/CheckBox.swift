@@ -17,7 +17,6 @@ struct CheckBox<Label>: View where Label: View{
         self._checked = checked
         self.label = label
     }
-
     
     var body: some View {
         HStack {

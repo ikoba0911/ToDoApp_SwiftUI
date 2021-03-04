@@ -16,7 +16,7 @@ struct TodayTaskListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Todays Task")
+            Text("TodayToDoListViewTitle".localized)
                 .font(.footnote)
                 .bold()
                 .padding()
