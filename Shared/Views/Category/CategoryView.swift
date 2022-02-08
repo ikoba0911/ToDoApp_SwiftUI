@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CategoryView: View {
     var category: ToDoEntity.Category
-    @State var numberOfTasks = 0
-    @State var showList = false
-    @State var addNewtask = false
+    @State private var numberOfTasks = 0
+    @State private var showList = false
+    @State private var addNewTask = false
     
     @Environment(\.managedObjectContext) var viewContext
     
@@ -41,14 +41,14 @@ struct CategoryView: View {
             Text(String(format: "TaskRemainigCount".localized, numberOfTasks))
             
             Button(action: {
-                self.addNewtask = true
+                self.addNewTask = true
             }) {
                 HStack {
                     Image(systemName: "plus")
                     Text("AddTask".localized)
                 }.padding()
                 .border(Color.white, width: 3)
-            }.sheet(isPresented: $addNewtask, onDismiss: {
+            }.sheet(isPresented: $addNewTask, onDismiss: {
                 self.updateCount()
             }) {
                 NewTaskView(category: self.category.rawValue)
