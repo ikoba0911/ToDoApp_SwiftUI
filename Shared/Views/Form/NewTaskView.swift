@@ -9,26 +9,19 @@ import SwiftUI
 
 struct NewTaskView: View {
     
-    @State var task: String = ""
-    @State var time: Date? = Date()
-    @State var showingSheet = false
-    @State var showingAlert = false
+    // MARK: - Property
+    @State private var task: String = ""
+    @State private var time: Date? = Date()
+    @State private var showingSheet = false
+    @State private var showingAlert = false
     @State var category: Int16 = ToDoEntity.Category.routine.rawValue
+    
     var categories: [ToDoEntity.Category] = [.routine, .shopping, .healthCare]
     
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
     
-    // TODO: あとでExtensionに移す
-    fileprivate func save() {
-        do {
-            try self.viewContext.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-    }
-    
+    // MARK: - View
     var body: some View {
         NavigationView {
             Form {
@@ -101,8 +94,21 @@ struct NewTaskView: View {
     }
 }
 
-private func isDateExist(date: Date?) -> Bool {
-    return date != nil
+// MARK: - Function
+extension NewTaskView {
+    
+    private func isDateExist(date: Date?) -> Bool {
+        return date != nil
+    }
+    
+    private func save() {
+        do {
+            try self.viewContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 }
 
 #if DEBUG
