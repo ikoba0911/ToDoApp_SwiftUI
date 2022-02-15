@@ -9,9 +9,20 @@ import SwiftUI
 
 struct UserView: View {
     
-    let image: Image
-    let userName: String
+    // MARK: - Property
+    private let image: Image
+    private let userName: String
     
+    // MARK: - Init
+    internal init(
+        image: Image,
+        userName: String
+    ) {
+        self.image = image
+        self.userName = userName
+    }
+    
+    // MARK: - View
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -38,8 +49,10 @@ struct UserView: View {
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            UserView(image: Image("swift"),
-                     userName: "SwiftToDo")
+            UserView(
+                image: Image("swift"),
+                userName: "SwiftToDo"
+            )
             Circle()
         }
     }
