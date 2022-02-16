@@ -9,11 +9,14 @@ import SwiftUI
 
 struct TodoDetailCell: View {
     
+    // MARK: - Property
     @ObservedObject var todo: ToDoEntity
-    let doneState: Int16 = ToDoEntity.State.done.rawValue
-    let uncompletedState: Int16 = ToDoEntity.State.todo.rawValue
+    private let doneState: Int16 = ToDoEntity.State.done.rawValue
+    private let uncompletedState: Int16 = ToDoEntity.State.todo.rawValue
+    // unused property
     var hideIcon = false
     
+    // MARK: - View
     var body: some View {
         HStack {
             if !hideIcon {
@@ -44,8 +47,12 @@ struct TodoDetailCell: View {
     }
 }
 
-private func isCompleted(state: Int16) -> Bool {
-    return state == ToDoEntity.State.done.rawValue
+// MARK: - Function
+extension TodoDetailCell {
+    
+    private func isCompleted(state: Int16) -> Bool {
+        return state == ToDoEntity.State.done.rawValue
+    }
 }
 
 #if DEBUG
