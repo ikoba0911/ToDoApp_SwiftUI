@@ -14,6 +14,7 @@ struct TodayTaskListView: View {
                   predicate: NSPredicate(format: "time BETWEEN {%@ , %@}", Date.today as NSDate, Date.tomorrow as NSDate),
                   animation: .default) var todoList: FetchedResults<ToDoEntity>
     
+    // MARK: - View
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("TodayToDoListViewTitle".localized)
