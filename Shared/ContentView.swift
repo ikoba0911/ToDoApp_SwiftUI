@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
 
+    // MARK: - View
     var body: some View {
         VStack(spacing: 0) {
-            // topのセーフゾーン対策
+            // Measures for top safe zones
             Color(UIColor.systemBackground)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 0)

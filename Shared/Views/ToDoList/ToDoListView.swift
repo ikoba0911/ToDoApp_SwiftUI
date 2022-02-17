@@ -10,6 +10,7 @@ import CoreData
 
 struct ToDoListView: View {
     
+    // MARK: - Property
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
     
@@ -17,22 +18,11 @@ struct ToDoListView: View {
            sortDescriptors: [NSSortDescriptor(keyPath: \ToDoEntity.time,
                                               ascending: true)],
            animation: .default)
-    var todoList: FetchedResults<ToDoEntity>
     
+    var todoList: FetchedResults<ToDoEntity>
     let category: ToDoEntity.Category
     
-    fileprivate func deleteTask(at offsets: IndexSet) {
-        for index in offsets {
-            let entity = todoList[index]
-            viewContext.delete(entity)
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            print("Delete Error. \(offsets)")
-        }
-    }
-    
+    // MARK: - View
     var body: some View {
         NavigationView {
             VStack {
@@ -65,6 +55,22 @@ struct ToDoListView: View {
                         .foregroundColor(Color("label"))
                 }
             })
+        }
+    }
+}
+
+// MARK: - Function
+extension ToDoListView {
+    
+    private func deleteTask(at offsets: IndexSet) {
+        for index in offsets {
+            let entity = todoList[index]
+            viewContext.delete(entity)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            print("Delete Error. \(offsets)")
         }
     }
 }
