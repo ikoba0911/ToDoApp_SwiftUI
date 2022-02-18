@@ -9,23 +9,12 @@ import SwiftUI
 
 struct QuickNewTaskCell: View {
     
+    // MARK: - Property
     let category: ToDoEntity.Category
-    @State var newTaskText: String = ""
+    @State private var newTaskText: String = ""
     @Environment(\.managedObjectContext) var viewContext
     
-    fileprivate func addNewTask() {
-        guard newTaskText != "" else {
-            return
-        }
-        ToDoEntity.create(in: self.viewContext, category: self.category, task: self.newTaskText)
-        self.newTaskText = ""
-    }
-    
-    fileprivate func cancelTask() {
-        self.newTaskText = ""
-        UIApplication.shared.closeKeyboard()
-    }
-    
+    // MARK: - View
     var body: some View {
         HStack {
             TextField("InputTask".localized, text: $newTaskText, onCommit:  {
@@ -50,11 +39,29 @@ struct QuickNewTaskCell: View {
     }
 }
 
+// MARK: - Function
+extension QuickNewTaskCell {
+    
+    private func addNewTask() {
+        guard newTaskText != "" else {
+            return
+        }
+        ToDoEntity.create(in: self.viewContext, category: self.category, task: self.newTaskText)
+        self.newTaskText = ""
+    }
+    
+    private func cancelTask() {
+        self.newTaskText = ""
+        UIApplication.shared.closeKeyboard()
+    }
+}
+
 #if DEBUG
 struct QuickNewTaskCell_Previews: PreviewProvider {
     static let context = PersistenceController.shared.container.viewContext
     static var previews: some View {
-        QuickNewTaskCell(category: .routine).environment(\.managedObjectContext, self.context)
+        QuickNewTaskCell(category: .routine)
+            .environment(\.managedObjectContext, self.context)
     }
 }
 #endif
