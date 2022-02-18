@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// viewの形を好きなポイントで角丸にできるShape
+// Shape that can make the view shape rounded corners at any point you want.
 struct RoundedCorners: Shape {
     var tl: CGFloat = 0.0
     var tr: CGFloat = 0.0

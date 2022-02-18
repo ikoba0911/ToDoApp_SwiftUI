@@ -8,27 +8,15 @@
 import SwiftUI
 
 struct EditTaskView: View {
+    
+    // MARK: - Property
     @ObservedObject var todo: ToDoEntity
-    @State var showingSheet = false
+    @State private var showingSheet = false
     var categories: [ToDoEntity.Category] = [.routine, .shopping, .healthCare]
     @Environment(\.managedObjectContext) var viewContext
-    
-    fileprivate func save() {
-        do {
-            try  self.viewContext.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-    }
-    
-    fileprivate func delete() {
-        viewContext.delete(todo)
-        save()
-    }
-
     @Environment(\.presentationMode) var presentationMode
     
+    // MARK: - View
     var body: some View {
         Form {
             Section(header: Text("Task".localized)) {
@@ -81,6 +69,23 @@ struct EditTaskView: View {
                 .cancel(Text("Cancel".localized))
             ])
         }
+    }
+}
+
+// MARK: - Function
+extension EditTaskView {
+    private func save() {
+        do {
+            try  self.viewContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    private func delete() {
+        viewContext.delete(todo)
+        save()
     }
 }
 
