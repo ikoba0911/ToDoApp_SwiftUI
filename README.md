@@ -1,11 +1,6 @@
 # ToDoApp_SwiftUI
  
 This is a simple todo application developed with SwiftUI.
- 
-# Requirement
- 
-* Xcode 12.4
-* Swift 5.3.2
 
 # Usage
 
