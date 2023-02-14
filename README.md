@@ -6,7 +6,7 @@ This is a simple todo application developed with SwiftUI.
 
 1. Clone this repository
 ```
-$ git clone https://github.com/Ayamegu/ToDoApp_SwiftUI.git
+$ git clone https://github.com/ikoba0911/ToDoApp_SwiftUI.git
 ```
 
 2. Go into the repository
