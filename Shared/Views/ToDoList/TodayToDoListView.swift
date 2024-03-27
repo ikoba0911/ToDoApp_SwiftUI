@@ -29,11 +29,9 @@ struct TodayTaskListView: View {
     }
 }
 
-#if DEBUG
-struct TodayTaskListView_Previews: PreviewProvider {
-    static let context = PersistenceController.shared.container.viewContext
-    static var previews: some View {
-        TodayTaskListView().environment(\.managedObjectContext, context)
-    }
+#Preview {
+    TodayTaskListView().environment(
+        \.managedObjectContext,
+         DeveloperToolsSupport.Preview.context
+    )
 }
-#endif

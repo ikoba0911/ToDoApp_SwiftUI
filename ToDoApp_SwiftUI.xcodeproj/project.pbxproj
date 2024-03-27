@@ -31,6 +31,7 @@
 		CA4544A725E28D5E00665DF3 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4544A625E28D5E00665DF3 /* ToDoListView.swift */; };
 		CA4544AE25E28E9500665DF3 /* ToDoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4544AD25E28E9500665DF3 /* ToDoDetailCell.swift */; };
 		CA4544B425E28F7600665DF3 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4544B325E28F7600665DF3 /* Binding.swift */; };
+		CA9583AE2BB318370070053B /* DeveloperToolsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9583AD2BB318370070053B /* DeveloperToolsSupport.swift */; };
 		CAAD735125E7D7590063BD12 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD735025E7D7590063BD12 /* NewTaskView.swift */; };
 		CAAD735225E7D7590063BD12 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD735025E7D7590063BD12 /* NewTaskView.swift */; };
 		CAAD736125E7D9710063BD12 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD736025E7D9710063BD12 /* EditTaskView.swift */; };
@@ -88,6 +89,7 @@
 		CA4544A625E28D5E00665DF3 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 		CA4544AD25E28E9500665DF3 /* ToDoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailCell.swift; sourceTree = "<group>"; };
 		CA4544B325E28F7600665DF3 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		CA9583AD2BB318370070053B /* DeveloperToolsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperToolsSupport.swift; sourceTree = "<group>"; };
 		CAAD735025E7D7590063BD12 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		CAAD736025E7D9710063BD12 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		CACAC58C25EBE17800F4EEBE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				CA3E2B0E25E90B280040083F /* Date.swift */,
 				CACAC58C25EBE17800F4EEBE /* UIApplication.swift */,
 				CACAC5C225EE753400F4EEBE /* String.swift */,
+				CA9583AD2BB318370070053B /* DeveloperToolsSupport.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				CA1F20DF25DAB83800B21B56 /* ContentView.swift in Sources */,
 				CA3E2B0F25E90B280040083F /* Date.swift in Sources */,
 				CACAC58D25EBE17800F4EEBE /* UIApplication.swift in Sources */,
+				CA9583AE2BB318370070053B /* DeveloperToolsSupport.swift in Sources */,
 				CA1CC70425DE9AD400BA1AD7 /* UserView.swift in Sources */,
 				CA4544B425E28F7600665DF3 /* Binding.swift in Sources */,
 				CA3E2B0525E90ACE0040083F /* RoundedCorners.swift in Sources */,
@@ -624,7 +628,7 @@
 				DEVELOPMENT_TEAM = 62MDXMXZ25;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -646,7 +650,7 @@
 				DEVELOPMENT_TEAM = 62MDXMXZ25;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
