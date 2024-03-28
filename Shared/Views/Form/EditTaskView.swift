@@ -89,15 +89,15 @@ extension EditTaskView {
     }
 }
 
-#if DEBUG
-struct EditTaskView_Previews: PreviewProvider {
-    static let context = PersistenceController.shared.container.viewContext
-    static var previews: some View {
-        let newTodo = ToDoEntity(context: context)
-        return NavigationView {
-            EditTaskView(todo: newTodo)
-            .environment(\.managedObjectContext, context)
-        }
+#Preview("EditTaskView") {
+    let newTodo = ToDoEntity(
+        context: DeveloperToolsSupport.Preview.context
+    )
+    return NavigationView {
+        EditTaskView(todo: newTodo)
+        .environment(
+            \.managedObjectContext,
+             DeveloperToolsSupport.Preview.context
+        )
     }
 }
-#endif
