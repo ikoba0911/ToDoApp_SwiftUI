@@ -27,10 +27,15 @@ struct CategoryImage: View {
     }
 }
 
-#if DEBUG
-struct CategoryImage_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryImage(category: .routine)
-    }
+#Preview("routine") {
+    CategoryImage(category: .routine)
 }
-#endif
+
+#Preview("healthCare") {
+    CategoryImage(category: .healthCare)
+}
+
+#Preview("shopping") {
+    CategoryImage(category: .shopping)
+}
+
