@@ -34,17 +34,15 @@ struct CheckBox<Label>: View where Label: View{
     }
 }
 
-#if DEBUG
-struct CheckBox_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            CheckBox(checked: .constant(false)) {
-                Text("ジョギング")
-            }
-            CheckBox(checked: .constant(true)) {
-                Image(systemName: "hand.thumbsup")
-            }
-        }
+
+#Preview("text check box") {
+    CheckBox(checked: .constant(false)) {
+        Text("ジョギング")
     }
 }
-#endif
+
+#Preview("icon check boc") {
+    CheckBox(checked: .constant(true)) {
+        Image(systemName: "hand.thumbsup")
+    }
+}

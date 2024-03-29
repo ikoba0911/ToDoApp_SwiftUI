@@ -46,12 +46,7 @@ struct RoundedCorners: Shape {
     
 }
 
-#if DEBUG
-struct RoundedCorners_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundedCorners(tl: 30, tr: 30, bl: 30, br: 30).padding()
-            .foregroundColor(.black)
-    }
+#Preview("RoundedCorners") {
+    RoundedCorners(tl: 30, tr: 30, bl: 30, br: 30).padding()
+        .foregroundColor(.black)
 }
-#endif
-

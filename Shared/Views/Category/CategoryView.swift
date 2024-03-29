@@ -68,16 +68,24 @@ struct CategoryView: View {
     }
 }
 
-#if DEBUG
-struct CategoryView_Previews: PreviewProvider {
-    static let context = PersistenceController.shared.container.viewContext
-    
-    static var previews: some View {
-        VStack {
-            CategoryView(category: .routine).padding()
-            CategoryView(category: .shopping).padding()
-            CategoryView(category: .healthCare).padding()
-        }.environment(\.managedObjectContext, context)
-    }
+#Preview("routine") {
+    CategoryView(
+        category: .routine
+    ).padding()
+        .environment(\.managedObjectContext, DeveloperToolsSupport.Preview.context)
 }
-#endif
+
+#Preview("healthCare") {
+    CategoryView(
+        category: .healthCare
+    ).padding()
+        .environment(\.managedObjectContext, DeveloperToolsSupport.Preview.context)
+}
+
+#Preview("shopping") {
+    CategoryView(
+        category: .shopping
+    ).padding()
+        .environment(\.managedObjectContext, DeveloperToolsSupport.Preview.context)
+}
+
