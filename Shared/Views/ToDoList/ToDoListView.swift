@@ -75,15 +75,9 @@ extension ToDoListView {
     }
 }
 
-#if DEBUG
-struct TodoListView_Previews: PreviewProvider {
-    
-    static let context = PersistenceController.shared.container.viewContext
-    
-    static var previews: some View {
-        ToDoEntity.deleteBatch(in: context)
-        ToDoEntity.createDemoData(in: context)
-        return ToDoListView(category: .routine).environment(\.managedObjectContext, context)
-    }
+#Preview {
+    let context = DeveloperToolsSupport.Preview.context
+    ToDoEntity.deleteBatch(in: context)
+    ToDoEntity.createDemoData(in: context)
+    return ToDoListView(category: .routine).environment(\.managedObjectContext, context)
 }
-#endif

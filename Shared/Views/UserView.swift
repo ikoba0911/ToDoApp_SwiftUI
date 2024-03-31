@@ -45,16 +45,10 @@ struct UserView: View {
     }
 }
 
-#if DEBUG
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            UserView(
-                image: Image("swift"),
-                userName: "SwiftToDo"
-            )
-            Circle()
-        }
-    }
+#Preview("UserView") {
+    UserView(
+        image: Image("swift"),
+        userName: "SwiftToDo"
+    )
 }
-#endif
+

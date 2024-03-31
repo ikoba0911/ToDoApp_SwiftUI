@@ -56,12 +56,7 @@ extension QuickNewTaskCell {
     }
 }
 
-#if DEBUG
-struct QuickNewTaskCell_Previews: PreviewProvider {
-    static let context = PersistenceController.shared.container.viewContext
-    static var previews: some View {
-        QuickNewTaskCell(category: .routine)
-            .environment(\.managedObjectContext, self.context)
-    }
+#Preview("QuickNewTaskCell") {
+    QuickNewTaskCell(category: .routine)
+        .environment(\.managedObjectContext, DeveloperToolsSupport.Preview.context)
 }
-#endif

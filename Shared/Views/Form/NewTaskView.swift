@@ -111,11 +111,6 @@ extension NewTaskView {
     }
 }
 
-#if DEBUG
-struct NewTaskView_Previews: PreviewProvider {
-    static let context = PersistenceController.shared.container.viewContext
-    static var previews: some View {
-        NewTaskView().environment(\.managedObjectContext, context)
-    }
+#Preview("NewTaskView") {
+    NewTaskView().environment(\.managedObjectContext, DeveloperToolsSupport.Preview.context)
 }
-#endif
